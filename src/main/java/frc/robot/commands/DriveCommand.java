@@ -24,9 +24,8 @@ public class DriveCommand extends Command {
 
     @Override
     public void execute() {
-        ChassisSpeeds speeds = this.swerve.getTargetSpeeds(vX.getAsDouble(), vY.getAsDouble(), vA.getAsDouble());
-        //this.swerve.getSwerve().getTarget
-        this.swerve.drive(speeds);
+        ChassisSpeeds speeds = swerve.getTargetSpeeds(vX.getAsDouble(), vY.getAsDouble(), vA.getAsDouble());
+        swerve.drive(speeds);
     }
 
     @Override

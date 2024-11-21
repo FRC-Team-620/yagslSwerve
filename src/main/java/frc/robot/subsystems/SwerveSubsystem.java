@@ -52,8 +52,8 @@ public class SwerveSubsystem extends SubsystemBase{
     }
 
     public ChassisSpeeds getTargetSpeeds(double vX, double vY, double vA){
-        ChassisSpeeds speeds = new ChassisSpeeds(Math.pow(vX, 2), Math.pow(vY, 2), Math.pow(vA, 2));
-        
+        Translation2d scaledInputs = SwerveMath.cubeTranslation(new Translation2d(vX, vY));
+        ChassisSpeeds speeds = swerve.swerveController.getRawTargetSpeeds(scaledInputs.getX(), scaledInputs.getY(), Math.pow(vA, 3));
         return speeds;
     }
 
