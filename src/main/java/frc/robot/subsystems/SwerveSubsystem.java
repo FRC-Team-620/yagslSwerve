@@ -20,12 +20,10 @@ public class SwerveSubsystem extends SubsystemBase{
     //gear ratio: 4.71
     //Diameter: 3 in
     private SwerveDrive swerve;
-    private SwerveController temp;
 
     public SwerveSubsystem (File directory){
 
         SwerveDriveTelemetry.verbosity = TelemetryVerbosity.HIGH;
-
         
         try {
             swerve = new SwerveParser(directory).createSwerveDrive(Constants.MAX_SPEED_MPS);
