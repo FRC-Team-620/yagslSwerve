@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 public class SingleControl implements ControlBoard {
-    XboxController controller;
+    XboxController controller = new XboxController(0);
 
     public DoubleSupplier leftX(){
         return () -> controller.getLeftX();
